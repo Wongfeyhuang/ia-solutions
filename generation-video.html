@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Génération Vidéo IA - AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .video-section {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .video-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .video-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .section-title {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .video-showcase {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-showcase video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-showcase iframe {
+            width: 100%;
+            height: 560px;
+            border: none;
+        }
+        
+        .workflow-description {
+            margin-top: 3rem;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .workflow-description h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .workflow-description p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .workflow-steps {
+            margin-top: 3rem;
+        }
+        
+        .step-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+        }
+        
+        .step-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .use-cases {
+            margin-top: 4rem;
+            background-color: var(--light-bg);
+            padding: 3rem 0;
+        }
+        
+        .use-case-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .use-case-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .use-case-card p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .use-case-card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .use-case-card ul li {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        .cta-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #9a7319;
+        }
+        
+        @media (max-width: 768px) {
+            .step-card {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 1rem;
+            }
+            
+            .video-showcase iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>AI Solutions</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html#accueil">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#competences">Compétences</a></li>
+                <li class="nav-item"><a href="experiences.html">Expériences</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Création de Workflows IA & Génération Vidéo</h1>
+            <p>Découvrez comment nos solutions de génération vidéo par IA, entièrement exécutées en local, peuvent transformer votre contenu sans dépendance aux services cloud</p>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container video-container">
+            <div class="video-intro">
+                <h2 class="section-title">Vidéo Générée par IA en Local</h2>
+                <p>Voici un exemple de vidéo générée entièrement par intelligence artificielle sur votre propre matériel. Cette démonstration illustre les capacités de nos workflows IA pour créer du contenu vidéo de haute qualité sans avoir besoin d'envoyer vos données à des services externes.</p>
+            </div>
+            
+            <div class="video-showcase">
+                <!-- Affichage de l'animation WebP -->
+                <img src="video/ComfyUI_00009_.webp" alt="Animation générée par IA en local" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            </div>
+            
+            <div class="workflow-description">
+                <h3>Notre Workflow de Génération Vidéo Local</h3>
+                <p>Nous utilisons une combinaison de technologies avancées pour créer des vidéos générées par IA, notamment ComfyUI, Stable Diffusion et d'autres modèles spécialisés, tous fonctionnant directement sur votre matériel. Notre workflow permet de générer des séquences vidéo fluides avec un contrôle précis sur le style, le contenu et la cohérence, tout en garantissant la confidentialité totale de vos données.</p>
+                <p>Chaque vidéo est créée à travers un pipeline personnalisé qui s'exécute localement et peut inclure la génération d'images clés, l'interpolation de frames, l'amélioration de la résolution et l'ajout d'effets spéciaux - le tout orchestré par des modèles d'IA installés sur votre propre infrastructure.</p>
+            </div>
+            
+            <div class="workflow-steps">
+                <h2 class="section-title">Notre Processus de Création</h2>
+                
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Conception et Scénarisation</h3>
+                        <p>Nous commençons par définir précisément le concept, le style et le scénario de la vidéo. Cette étape cruciale permet de guider l'IA dans la génération de contenu cohérent et aligné avec vos objectifs.</p>
+                        <p>Nos experts travaillent avec vous pour transformer vos idées en prompts et paramètres techniques qui serviront de base à la génération.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Génération d'Images Clés</h3>
+                        <p>Nous utilisons des modèles de diffusion avancés installés localement pour créer les images clés (keyframes) qui définiront les moments importants de la vidéo. Ces images sont générées avec une attention particulière à la cohérence des personnages, des décors et du style visuel, le tout sans jamais quitter votre infrastructure.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Animation et Interpolation</h3>
+                        <p>Les images clés sont ensuite reliées grâce à des techniques d'interpolation avancées qui créent les transitions fluides entre chaque frame. Nos modèles spécialisés, exécutés sur votre propre matériel, assurent la cohérence du mouvement et des transformations.</p>
+                        <p>Cette étape est essentielle pour obtenir des animations naturelles et éviter les artefacts visuels, tout en préservant la confidentialité de vos projets.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Post-traitement et Amélioration</h3>
+                        <p>La vidéo brute est ensuite affinée grâce à des techniques de post-traitement IA :</p>
+                        <ul>
+                            <li>Amélioration de la résolution (upscaling)</li>
+                            <li>Stabilisation des mouvements</li>
+                            <li>Correction des couleurs et de l'éclairage</li>
+                            <li>Élimination des artefacts visuels</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Finalisation et Livraison</h3>
+                        <p>La dernière étape consiste à ajouter les éléments finaux comme la bande sonore, les effets sonores, et éventuellement du texte ou des graphiques. La vidéo est ensuite exportée dans le format de votre choix, prête à être utilisée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title">Applications Pratiques</h2>
+            <p class="section-description">La génération vidéo par IA ouvre de nombreuses possibilités pour différents secteurs et besoins :</p>
+            
+            <div class="use-case-card">
+                <h3>Marketing et Publicité</h3>
+                <p>Créez rapidement des vidéos promotionnelles, des animations de produits ou des publicités personnalisées sans les coûts élevés de la production vidéo traditionnelle et sans partager vos stratégies marketing avec des services cloud externes.</p>
+                <ul>
+                    <li>Publicités pour les réseaux sociaux générées en toute confidentialité</li>
+                    <li>Présentations de produits créées localement avant leur lancement officiel</li>
+                    <li>Animations de logos sans dépendance aux services en ligne</li>
+                    <li>Vidéos explicatives produites en interne pour protéger votre propriété intellectuelle</li>
+                </ul>
+            </div>
+            
+            <div class="use-case-card">
+                <h3>Éducation et Formation</h3>
+                <p>Développez du contenu éducatif visuel pour illustrer des concepts complexes ou créer des simulations d'apprentissage, tout en gardant le contrôle total sur vos données pédagogiques sensibles.</p>
+                <ul>
+                    <li>Visualisations scientifiques générées localement pour la recherche confidentielle</li>
+                    <li>Tutoriels animés créés en interne pour la formation propriétaire</li>
+                    <li>Simulations de processus sans risque de fuite d'informations</li>
+                    <li>Présentations interactives pour des données sensibles ou réglementées</li>
+                </ul>
+            </div>
+            
+            <div class="use-case-card">
+                <h3>Création de Contenu</h3>
+                <p>Donnez vie à vos idées créatives avec des vidéos générées par IA sur votre propre matériel, garantissant que vos concepts originaux restent entièrement sous votre contrôle.</p>
+                <ul>
+                    <li>Courts-métrages expérimentaux créés sans partager votre vision artistique</li>
+                    <li>Clips musicaux générés localement pour protéger vos droits d'auteur</li>
+                    <li>Animations artistiques produites en toute indépendance</li>
+                    <li>Effets visuels développés en interne pour vos projets confidentiels</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt à transformer vos idées en vidéos générées par IA en local ?</h2>
+            <p>Contactez-nous pour discuter de votre projet et découvrir comment nos workflows de génération vidéo peuvent répondre à vos besoins spécifiques, tout en garantissant la sécurité et la confidentialité de vos données grâce au traitement 100% local.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3>AI Solutions</h3>
+                <p>Solutions IA & Maintenance Informatique pour freelances et créateurs.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="outils-ia.html">Installation d'outils IA</a></li>
+                    <li><a href="agents-ia.html">Automatisation</a></li>
+                    <li><a href="generation-video.html">Génération Vidéo</a></li>
+                    <li><a href="index.html#services">Maintenance informatique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#profil">Profil</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AI Solutions. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

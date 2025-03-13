@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outils IA - AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .tools-section {
+            padding: 4rem 0;
+        }
+        
+        .tool-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(118, 185, 0, 0.1);
+            border-radius: 50%;
+        }
+        
+        .tool-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 1rem;
+        }
+        
+        .tool-title {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .tool-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .tool-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .tool-features h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+        
+        .tool-media {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .tool-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .tool-media iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        .tool-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .tool-media iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>AI Solutions</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html#accueil">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#competences">Compétences</a></li>
+                <li class="nav-item"><a href="experiences.html">Expériences</a></li>
+                <li class="nav-item"><a href="generation-video.html">Génération Vidéo</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Installation et Configuration d'Outils IA</h1>
+            <p>Découvrez les outils d'intelligence artificielle que nous installons et configurons pour optimiser votre workflow</p>
+        </div>
+    </section>
+
+    <section id="tools-overview" class="tools-section">
+        <div class="container">
+            <h2 class="section-title">Nos Outils IA</h2>
+            <p class="section-description">Nous proposons l'installation et la configuration de plusieurs outils d'intelligence artificielle puissants pour automatiser vos tâches et optimiser votre workflow. Découvrez ci-dessous les détails de chaque outil.</p>
+            
+            <div class="tools-navigation">
+                <ul>
+                    <li><a href="#docker">Docker</a></li>
+                    <li><a href="#n8n">n8n</a></li>
+                    <li><a href="#mcpserver">MCPserver</a></li>
+                    <li><a href="#puppeteer">Puppeteer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="docker" class="tools-section">
+        <div class="container">
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3 class="tool-title">Docker</h3>
+                </div>
+                <div class="tool-description">
+                    <p>Docker est une plateforme de conteneurisation qui permet de créer, déployer et exécuter des applications dans des environnements isolés appelés conteneurs. Cette technologie facilite le déploiement d'applications IA en garantissant qu'elles fonctionnent de manière cohérente, quel que soit l'environnement d'exécution.</p>
+                </div>
+                <div class="tool-features">
+                    <h4>Avantages pour votre workflow :</h4>
+                    <ul class="feature-list">
+                        <li>Isolation des applications pour éviter les conflits de dépendances</li>
+                        <li>Déploiement rapide et cohérent de vos outils IA</li>
+                        <li>Facilité de mise à l'échelle selon vos besoins</li>
+                        <li>Portabilité entre différents environnements (développement, test, production)</li>
+                        <li>Gestion simplifiée des ressources système</li>
+                    </ul>
+                </div>
+                <div class="tool-media">
+                    <img src="images/docker-example.jpg" alt="Exemple d'utilisation de Docker" loading="lazy">
+                </div>
+                <p>Docker est la fondation sur laquelle nous déployons d'autres outils IA, garantissant stabilité et performance optimale.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="n8n" class="tools-section">
+        <div class="container">
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="tool-title">n8n</h3>
+                </div>
+                <div class="tool-description">
+                    <p>n8n est un outil d'automatisation de flux de travail extensible qui permet de connecter différentes applications et services. Il offre une interface visuelle intuitive pour créer des workflows complexes sans nécessiter de compétences avancées en programmation.</p>
+                </div>
+                <div class="tool-features">
+                    <h4>Avantages pour votre workflow :</h4>
+                    <ul class="feature-list">
+                        <li>Création de workflows IA personnalisés via une interface visuelle intuitive</li>
+                        <li>Intégration avec plus de 200 services et applications</li>
+                        <li>Automatisation des tâches répétitives pour gagner du temps</li>
+                        <li>Traitement et transformation des données entre différents systèmes</li>
+                        <li>Déclenchement d'actions basées sur des événements spécifiques</li>
+                    </ul>
+                </div>
+                <div class="tool-media">
+                    <img src="images/n8n-workflow.jpg" alt="Exemple de workflow n8n" loading="lazy">
+                </div>
+                <p>Avec n8n, nous pouvons automatiser vos processus métier en intégrant l'IA dans votre flux de travail quotidien.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mcpserver" class="tools-section">
+        <div class="container">
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="tool-title">MCPserver</h3>
+                </div>
+                <div class="tool-description">
+                    <p>MCPserver (Multi-Agent Communication Protocol Server) est une plateforme qui permet la gestion et la coordination d'agents IA. Cette solution facilite la communication entre différents modèles d'IA et services, permettant de créer des systèmes intelligents complexes.</p>
+                </div>
+                <div class="tool-features">
+                    <h4>Avantages pour votre workflow :</h4>
+                    <ul class="feature-list">
+                        <li>Orchestration d'agents IA multiples travaillant ensemble</li>
+                        <li>Gestion efficace des ressources pour les modèles d'IA gourmands</li>
+                        <li>Interface unifiée pour interagir avec différents modèles d'IA</li>
+                        <li>Extensibilité pour ajouter de nouvelles capacités à votre système</li>
+                        <li>Monitoring et logging des interactions entre agents</li>
+                    </ul>
+                </div>
+                <div class="tool-media">
+                    <img src="images/mcpserver-diagram.jpg" alt="Diagramme MCPserver" loading="lazy">
+                </div>
+                <p>MCPserver est idéal pour les projets nécessitant plusieurs agents IA collaborant pour résoudre des problèmes complexes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="puppeteer" class="tools-section">
+        <div class="container">
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="tool-title">Puppeteer</h3>
+                </div>
+                <div class="tool-description">
+                    <p>Puppeteer est une bibliothèque Node.js qui fournit une API de haut niveau pour contrôler Chrome ou Chromium via le protocole DevTools. Il permet d'automatiser des actions dans un navigateur web, comme la navigation, la saisie de formulaires, les captures d'écran, et bien plus encore.</p>
+                </div>
+                <div class="tool-features">
+                    <h4>Avantages pour votre workflow :</h4>
+                    <ul class="feature-list">
+                        <li>Automatisation des tâches web répétitives</li>
+                        <li>Génération de captures d'écran et de PDFs de pages web</li>
+                        <li>Extraction de données structurées depuis des sites web</li>
+                        <li>Tests automatisés d'interfaces utilisateur</li>
+                        <li>Intégration avec d'autres outils IA pour des workflows complexes</li>
+                    </ul>
+                </div>
+                <div class="tool-media">
+                    <img src="images/puppeteer-automation.jpg" alt="Automatisation avec Puppeteer" loading="lazy">
+                </div>
+                <p>Puppeteer est particulièrement utile pour l'automatisation de tâches web et la collecte de données pour alimenter vos modèles d'IA.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tool-cta">
+        <div class="container">
+            <h2>Prêt à optimiser votre workflow avec ces outils IA ?</h2>
+            <p>Contactez-nous pour discuter de vos besoins spécifiques et obtenir un devis personnalisé.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </section>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3>AI Solutions</h3>
+                <p>Solutions IA & Maintenance Informatique pour freelances et créateurs.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="index.html#services">Installation d'outils IA</a></li>
+                    <li><a href="index.html#services">Automatisation</a></li>
+                    <li><a href="generation-video.html">Génération Vidéo</a></li>
+                    <li><a href="index.html#services">Maintenance informatique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#profil">Profil</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AI Solutions. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navList.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

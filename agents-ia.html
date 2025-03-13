@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisation et Gestion d'Agents IA - AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .workflow-section {
+            padding: 4rem 0;
+        }
+        
+        .workflow-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .workflow-image {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .workflow-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .workflow-steps {
+            margin-top: 3rem;
+        }
+        
+        .step-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .step-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .agent-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .agent-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .agent-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(118, 185, 0, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .agent-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .agent-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .use-cases {
+            margin-top: 4rem;
+        }
+        
+        .use-case-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .use-case-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .use-case-card p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .use-case-card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .use-case-card ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .cta-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .step-card {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>AI Solutions</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html#accueil">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#competences">Compétences</a></li>
+                <li class="nav-item"><a href="experiences.html">Expériences</a></li>
+                <li class="nav-item"><a href="generation-video.html">Génération Vidéo</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Automatisation et Gestion d'Agents IA</h1>
+            <p>Découvrez comment les agents IA peuvent transformer votre workflow et automatiser vos tâches complexes</p>
+        </div>
+    </section>
+
+    <section class="workflow-section">
+        <div class="container workflow-container">
+            <h2 class="section-title">Workflow Complet d'Agents IA</h2>
+            <p class="section-description">Un système d'agents IA est composé de plusieurs composants qui travaillent ensemble pour automatiser des tâches complexes. Voici un aperçu d'un workflow complet d'agents IA que nous pouvons mettre en place pour vous :</p>
+            
+            <div class="workflow-image">
+                <img src="images/n8ndocker.png" alt="Workflow complet d'agents IA" loading="lazy">
+            </div>
+            
+            <p class="section-description">Voici une autre représentation du workflow d'agents IA, montrant l'interaction entre les différents composants :</p>
+            
+            <div class="workflow-image">
+                <img src="images/workflow2.png" alt="Interaction des composants d'agents IA" loading="lazy">
+            </div>
+            
+            <div class="workflow-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Collecte de Données</h3>
+                        <p>Les agents de collecte de données surveillent diverses sources (sites web, APIs, bases de données) pour recueillir les informations nécessaires à votre workflow. Ces agents peuvent être programmés pour s'exécuter à intervalles réguliers ou être déclenchés par des événements spécifiques.</p>
+                        <p>Grâce à Puppeteer et d'autres outils de scraping, ces agents peuvent naviguer sur le web comme un humain, remplir des formulaires, cliquer sur des boutons et extraire des données structurées.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Traitement et Analyse</h3>
+                        <p>Une fois les données collectées, les agents de traitement prennent le relais. Ils utilisent des modèles d'IA pour analyser, classifier et extraire des informations pertinentes. Ces agents peuvent :</p>
+                        <ul>
+                            <li>Analyser le sentiment de textes</li>
+                            <li>Extraire des entités nommées (personnes, lieux, organisations)</li>
+                            <li>Classifier des documents</li>
+                            <li>Générer des résumés automatiques</li>
+                            <li>Traduire du contenu</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Prise de Décision</h3>
+                        <p>Les agents de décision évaluent les résultats de l'analyse et déterminent les actions à entreprendre. Ils peuvent utiliser des règles prédéfinies, des arbres de décision ou des modèles d'apprentissage automatique plus complexes pour choisir la meilleure action à effectuer.</p>
+                        <p>Ces agents sont le "cerveau" du système, orchestrant le flux de travail et adaptant les processus en fonction des données entrantes et des objectifs définis.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Exécution d'Actions</h3>
+                        <p>Les agents d'action exécutent les décisions prises à l'étape précédente. Ils peuvent :</p>
+                        <ul>
+                            <li>Envoyer des emails ou des notifications</li>
+                            <li>Mettre à jour des bases de données</li>
+                            <li>Publier du contenu sur les réseaux sociaux</li>
+                            <li>Générer des rapports</li>
+                            <li>Déclencher d'autres workflows</li>
+                        </ul>
+                        <p>Ces agents utilisent n8n pour se connecter à différentes applications et services, permettant une automatisation complète de bout en bout.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Apprentissage et Amélioration</h3>
+                        <p>Les agents d'apprentissage surveillent les performances du système et collectent des données sur les résultats. Ils permettent au système de s'améliorer continuellement en :</p>
+                        <ul>
+                            <li>Identifiant les modèles qui nécessitent un réentraînement</li>
+                            <li>Ajustant les paramètres pour optimiser les performances</li>
+                            <li>Détectant les anomalies ou les erreurs</li>
+                            <li>Proposant des améliorations au workflow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agent-section">
+        <div class="container">
+            <h2 class="section-title">Types d'Agents IA</h2>
+            <p class="section-description">Notre système utilise différents types d'agents spécialisés, chacun ayant un rôle spécifique dans le workflow global :</p>
+            
+            <div class="agent-cards">
+                <div class="agent-card">
+                    <div class="agent-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Agent de Recherche</h3>
+                    <p>Explore le web et les bases de données pour trouver des informations pertinentes. Utilise des techniques avancées de recherche sémantique pour comprendre le contexte et trouver les données les plus pertinentes.</p>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Agent de Raisonnement</h3>
+                    <p>Analyse les informations collectées, établit des connexions logiques et tire des conclusions. Utilise des modèles de langage avancés pour comprendre les nuances et le contexte des données.</p>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Agent de Création</h3>
+                    <p>Génère du contenu original comme des textes, des images ou des rapports basés sur les données analysées. Peut adapter le style et le ton en fonction de l'audience cible.</p>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Agent d'Orchestration</h3>
+                    <p>Coordonne les activités des autres agents, gère les priorités et optimise l'allocation des ressources. Assure que le workflow fonctionne de manière fluide et efficace.</p>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Agent d'Analyse</h3>
+                    <p>Surveille les performances du système, identifie les tendances et génère des insights à partir des données collectées. Fournit des tableaux de bord et des rapports pour suivre les KPIs.</p>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Agent de Sécurité</h3>
+                    <p>Protège le système contre les menaces, vérifie les entrées suspectes et assure la conformité avec les réglementations sur la protection des données.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title">Cas d'Utilisation</h2>
+            <p class="section-description">Voici quelques exemples concrets de la façon dont nos systèmes d'agents IA peuvent être appliqués à différents domaines :</p>
+            
+            <div class="use-case-card">
+                <h3>Veille Concurrentielle Automatisée</h3>
+                <p>Un système d'agents IA peut surveiller en permanence les activités de vos concurrents, analyser leurs stratégies marketing, leurs lancements de produits et leur présence sur les réseaux sociaux.</p>
+                <p><strong>Fonctionnement :</strong></p>
+                <ul>
+                    <li>Les agents de collecte surveillent les sites web, les réseaux sociaux et les communiqués de presse des concurrents</li>
+                    <li>Les agents d'analyse identifient les changements significatifs et les nouvelles tendances</li>
+                    <li>Les agents de création génèrent des rapports hebdomadaires résumant les activités importantes</li>
+                    <li>Les agents d'action envoient des alertes en temps réel pour les événements critiques</li>
+                </ul>
+            </div>
+            
+            <div class="use-case-card">
+                <h3>Génération et Curation de Contenu</h3>
+                <p>Automatisez la création et la curation de contenu pour vos blogs, newsletters ou réseaux sociaux.</p>
+                <p><strong>Fonctionnement :</strong></p>
+                <ul>
+                    <li>Les agents de recherche identifient les sujets tendance dans votre secteur</li>
+                    <li>Les agents de création génèrent des ébauches d'articles ou de posts</li>
+                    <li>Les agents d'analyse évaluent l'engagement potentiel du contenu</li>
+                    <li>Les agents d'action publient le contenu aux moments optimaux</li>
+                </ul>
+            </div>
+            
+            <div class="use-case-card">
+                <h3>Support Client Intelligent</h3>
+                <p>Améliorez votre service client avec un système d'agents IA capable de répondre aux questions fréquentes et d'escalader les problèmes complexes.</p>
+                <p><strong>Fonctionnement :</strong></p>
+                <ul>
+                    <li>Les agents de compréhension analysent les demandes entrantes</li>
+                    <li>Les agents de recherche trouvent les informations pertinentes dans votre base de connaissances</li>
+                    <li>Les agents de création formulent des réponses personnalisées</li>
+                    <li>Les agents de décision déterminent si une intervention humaine est nécessaire</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt à transformer votre workflow avec des agents IA ?</h2>
+            <p>Nous pouvons concevoir et déployer un système d'agents IA personnalisé adapté à vos besoins spécifiques. Contactez-nous pour discuter de votre projet et obtenir un devis sur mesure.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3>AI Solutions</h3>
+                <p>Solutions IA & Maintenance Informatique pour freelances et créateurs.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="outils-ia.html">Installation d'outils IA</a></li>
+                    <li><a href="agents-ia.html">Automatisation</a></li>
+                    <li><a href="generation-video.html">Génération Vidéo</a></li>
+                    <li><a href="index.html#services">Maintenance informatique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#profil">Profil</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AI Solutions. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navList.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

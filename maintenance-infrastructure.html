@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance et Infrastructure - AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .maintenance-section {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .maintenance-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .maintenance-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .maintenance-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .section-title {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .info-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(178, 134, 30, 0.1);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .info-title {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .info-content {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 1.5rem;
+        }
+        
+        .benefits-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+        
+        .cost-comparison {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cost-comparison-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .cost-comparison-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .cost-column {
+            flex: 1;
+            min-width: 250px;
+            padding: 1.5rem;
+            border-right: 1px solid #eee;
+        }
+        
+        .cost-column:last-child {
+            border-right: none;
+        }
+        
+        .cost-column h4 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+        
+        .cost-column ul {
+            padding-left: 1.5rem;
+        }
+        
+        .cost-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        .cta-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 768px) {
+            .cost-column {
+                flex: 100%;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .cost-column:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>AI Solutions</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html#accueil">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#profil">Profil</a></li>
+                <li class="nav-item"><a href="index.html#competences">Compétences</a></li>
+                <li class="nav-item"><a href="experiences.html">Expériences</a></li>
+                <li class="nav-item"><a href="generation-video.html">Génération Vidéo</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Maintenance et Infrastructure Informatique</h1>
+            <p>Optimisez vos investissements matériels et assurez la pérennité de votre infrastructure</p>
+        </div>
+    </section>
+
+    <section class="maintenance-section">
+        <div class="container maintenance-container">
+            <div class="maintenance-intro">
+                <h2 class="section-title">L'importance d'une infrastructure bien pensée</h2>
+                <p>Dans un monde où la technologie évolue rapidement, le choix judicieux de votre matériel informatique et sa maintenance régulière sont des facteurs clés pour assurer la performance, la fiabilité et la rentabilité de votre infrastructure. Découvrez comment une approche stratégique peut vous faire économiser du temps et de l'argent sur le long terme.</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="info-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="info-title">Choisir le bon matériel</h3>
+                </div>
+                <div class="info-content">
+                    <p>Le choix du matériel informatique ne doit pas se limiter à une simple question de prix d'achat. Une approche stratégique prend en compte de nombreux facteurs qui influenceront la performance et le coût total de possession sur la durée de vie de l'équipement.</p>
+                    
+                    <h4>Critères essentiels pour un choix éclairé :</h4>
+                    <ul class="benefits-list">
+                        <li><strong>Évolutivité</strong> : Privilégiez du matériel qui pourra être mis à niveau facilement (RAM, stockage, composants modulaires)</li>
+                        <li><strong>Compatibilité</strong> : Assurez-vous que le matériel s'intègre parfaitement avec vos systèmes existants et futurs</li>
+                        <li><strong>Consommation énergétique</strong> : Un matériel économe en énergie réduit considérablement les coûts d'exploitation</li>
+                        <li><strong>Fiabilité et durabilité</strong> : Investir dans des composants de qualité réduit les risques de pannes et prolonge la durée de vie</li>
+                        <li><strong>Support et garantie</strong> : Vérifiez la disponibilité des pièces de rechange et la qualité du support technique</li>
+                    </ul>
+                    
+                    <p>Un investissement initial plus élevé dans du matériel de qualité se traduit souvent par un coût total de possession inférieur sur la durée de vie de l'équipement, grâce à une meilleure fiabilité, une maintenance moins fréquente et une durée de vie prolongée.</p>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="info-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="info-title">L'importance des mises à jour régulières</h3>
+                </div>
+                <div class="info-content">
+                    <p>Les mises à jour logicielles et matérielles ne sont pas simplement des améliorations cosmétiques, mais des éléments essentiels pour maintenir la sécurité, la performance et la compatibilité de votre infrastructure.</p>
+                    
+                    <h4>Bénéfices des mises à jour régulières :</h4>
+                    <ul class="benefits-list">
+                        <li><strong>Sécurité renforcée</strong> : Protection contre les vulnérabilités et les menaces émergentes</li>
+                        <li><strong>Performance optimisée</strong> : Correction des bugs et optimisation des ressources</li>
+                        <li><strong>Compatibilité assurée</strong> : Support des nouvelles technologies et standards</li>
+                        <li><strong>Nouvelles fonctionnalités</strong> : Accès à des améliorations qui peuvent augmenter la productivité</li>
+                        <li><strong>Conformité réglementaire</strong> : Respect des exigences légales en matière de sécurité des données</li>
+                    </ul>
+                    
+                    <p>Une stratégie de mise à jour planifiée et régulière permet d'éviter les interruptions imprévues et les coûts associés aux incidents de sécurité ou aux incompatibilités logicielles.</p>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="info-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="info-title">Maintenance préventive vs réactive</h3>
+                </div>
+                <div class="info-content">
+                    <p>La maintenance préventive consiste à intervenir avant qu'un problème ne survienne, tandis que la maintenance réactive répond aux pannes après leur apparition. L'approche préventive offre des avantages considérables en termes de coûts et de continuité des opérations.</p>
+                    
+                    <div class="cost-comparison">
+                        <div class="cost-comparison-header">
+                            <h3>Comparaison des approches de maintenance</h3>
+                        </div>
+                        <div class="cost-comparison-content">
+                            <div class="cost-column">
+                                <h4>Maintenance Réactive</h4>
+                                <ul>
+                                    <li>Temps d'arrêt imprévu et souvent prolongé</li>
+                                    <li>Perte de productivité</li>
+                                    <li>Risque de perte de données</li>
+                                    <li>Réparations d'urgence coûteuses</li>
+                                    <li>Remplacement prématuré du matériel</li>
+                                    <li>Impact sur la satisfaction client</li>
+                                </ul>
+                            </div>
+                            <div class="cost-column">
+                                <h4>Maintenance Préventive</h4>
+                                <ul>
+                                    <li>Interventions planifiées à l'avance</li>
+                                    <li>Minimisation des temps d'arrêt</li>
+                                    <li>Prolongation de la durée de vie du matériel</li>
+                                    <li>Réduction des coûts de réparation</li>
+                                    <li>Optimisation continue des performances</li>
+                                    <li>Meilleure prévisibilité budgétaire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Selon plusieurs études, le coût d'une maintenance préventive est en moyenne 3 à 5 fois inférieur à celui d'une maintenance réactive sur la durée de vie d'un équipement informatique.</p>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="info-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="info-title">Retour sur investissement à long terme</h3>
+                </div>
+                <div class="info-content">
+                    <p>L'investissement dans une infrastructure de qualité et sa maintenance régulière génère un retour sur investissement significatif sur le long terme, grâce à plusieurs facteurs :</p>
+                    
+                    <h4>Bénéfices économiques à long terme :</h4>
+                    <ul class="benefits-list">
+                        <li><strong>Réduction des coûts opérationnels</strong> : Moins de pannes, moins d'interventions d'urgence</li>
+                        <li><strong>Augmentation de la productivité</strong> : Systèmes plus rapides et plus fiables</li>
+                        <li><strong>Prolongation de la durée de vie du matériel</strong> : Amortissement sur une période plus longue</li>
+                        <li><strong>Meilleure planification budgétaire</strong> : Dépenses prévisibles et échelonnées</li>
+                        <li><strong>Réduction des risques</strong> : Moins d'incidents de sécurité et de pertes de données</li>
+                    </ul>
+                    
+                    <p>Une étude de Gartner a démontré qu'une entreprise qui investit dans une infrastructure de qualité et sa maintenance régulière peut réduire son coût total de possession (TCO) de 25 à 40% sur une période de 5 ans, comparé à une approche réactive et des achats basés uniquement sur le prix initial.</p>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="info-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="info-title">Notre approche de la maintenance</h3>
+                </div>
+                <div class="info-content">
+                    <p>Chez AI Solutions, nous proposons une approche complète de la maintenance informatique qui combine expertise technique, planification stratégique et suivi régulier pour garantir la performance et la longévité de votre infrastructure.</p>
+                    
+                    <h4>Notre méthodologie en 4 étapes :</h4>
+                    <ol>
+                        <li><strong>Audit complet</strong> : Évaluation détaillée de votre infrastructure existante</li>
+                        <li><strong>Plan de maintenance personnalisé</strong> : Calendrier d'interventions adapté à vos besoins spécifiques</li>
+                        <li><strong>Maintenance préventive régulière</strong> : Interventions planifiées pour prévenir les problèmes</li>
+                        <li><strong>Suivi et optimisation continue</strong> : Ajustements réguliers pour maintenir des performances optimales</li>
+                    </ol>
+                    
+                    <p>Notre objectif est de vous aider à maximiser le retour sur investissement de votre infrastructure informatique tout en minimisant les risques et les coûts imprévus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Optimisez votre infrastructure informatique</h2>
+            <p>Contactez-nous dès aujourd'hui pour discuter de vos besoins en matière de maintenance et d'infrastructure informatique. Notre expertise vous aidera à faire les choix les plus judicieux pour votre entreprise.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un audit</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3>AI Solutions</h3>
+                <p>Solutions IA & Maintenance Informatique pour freelances et créateurs.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="outils-ia.html">Installation d'outils IA</a></li>
+                    <li><a href="agents-ia.html">Automatisation</a></li>
+                    <li><a href="generation-video.html">Génération Vidéo</a></li>
+                    <li><a href="consulting-accompagnement.html">Consulting</a></li>
+                    <li><a href="maintenance-infrastructure.html">Maintenance informatique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#profil">Profil</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AI Solutions. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

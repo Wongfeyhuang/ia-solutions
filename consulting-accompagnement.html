@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting et Accompagnement - AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .process-section {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .process-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .process-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .section-title {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .process-steps {
+            margin-top: 3rem;
+        }
+        
+        .step-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+        }
+        
+        .step-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .contact-methods {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(178, 134, 30, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .contact-method i {
+            color: var(--primary-color);
+        }
+        
+        .benefits-section {
+            padding: 4rem 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .benefit-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        .cta-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 768px) {
+            .step-card {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>AI Solutions</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html#accueil">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#profil">Profil</a></li>
+                <li class="nav-item"><a href="index.html#competences">Compétences</a></li>
+                <li class="nav-item"><a href="experiences.html">Expériences</a></li>
+                <li class="nav-item"><a href="generation-video.html">Génération Vidéo</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Consulting et Accompagnement</h1>
+            <p>Un accompagnement personnalisé pour intégrer l'intelligence artificielle dans votre entreprise</p>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container process-container">
+            <div class="process-intro">
+                <h2 class="section-title">Notre Processus d'Accompagnement</h2>
+                <p>Chez AI Solutions, nous avons développé une approche structurée pour vous accompagner dans l'intégration de solutions d'intelligence artificielle adaptées à vos besoins spécifiques. Découvrez les étapes de notre processus de consulting.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Prise de Contact Initiale</h3>
+                        <p>La première étape consiste à établir un contact avec notre équipe. Vous pouvez nous joindre par téléphone ou par email pour nous présenter brièvement votre entreprise et vos besoins en matière d'intelligence artificielle.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <span>Par téléphone</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>Par email</span>
+                            </div>
+                        </div>
+                        <p>Lors de ce premier échange, nous recueillerons des informations préliminaires sur votre activité et vos attentes, ce qui nous permettra de préparer efficacement la prochaine étape.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Rendez-vous et Audit d'Infrastructure</h3>
+                        <p>Suite à notre premier contact, nous organiserons un rendez-vous dans vos locaux. Cette visite a deux objectifs principaux :</p>
+                        <ul>
+                            <li><strong>Check-up complet de votre infrastructure informatique</strong> : évaluation de votre matériel, logiciels, réseau et capacités de stockage pour déterminer leur compatibilité avec les solutions IA envisagées.</li>
+                            <li><strong>Séance de consulting approfondie</strong> : discussion détaillée sur les besoins spécifiques de votre entreprise, vos objectifs commerciaux et les domaines où l'IA pourrait apporter le plus de valeur.</li>
+                        </ul>
+                        <p>Cette étape est cruciale car elle nous permet de comprendre votre environnement technique et vos enjeux métier, afin de proposer des solutions parfaitement adaptées à votre contexte.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Élaboration de Votre Workflow Personnalisé</h3>
+                        <p>Après l'audit et la séance de consulting, notre consultant travaillera sur la conception d'un workflow IA personnalisé pour votre entreprise. Cette phase comprend :</p>
+                        <ul>
+                            <li>L'analyse approfondie des données recueillies lors de l'audit</li>
+                            <li>L'identification des solutions IA les plus pertinentes pour vos besoins</li>
+                            <li>La conception d'une architecture technique adaptée à votre infrastructure</li>
+                            <li>L'élaboration d'une feuille de route détaillée pour l'implémentation</li>
+                            <li>L'estimation des ressources nécessaires et du retour sur investissement attendu</li>
+                        </ul>
+                        <p>Ce travail d'analyse et de conception est réalisé par nos experts qui s'appuient sur leur expérience et leur connaissance approfondie des technologies IA pour créer une solution sur mesure.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Présentation et Validation de la Solution</h3>
+                        <p>Une fois votre workflow personnalisé élaboré, nous organisons une réunion de présentation pour :</p>
+                        <ul>
+                            <li>Vous exposer en détail la solution proposée</li>
+                            <li>Expliquer les bénéfices attendus et le retour sur investissement</li>
+                            <li>Répondre à vos questions et recueillir vos retours</li>
+                            <li>Ajuster la proposition si nécessaire</li>
+                        </ul>
+                        <p>Cette étape collaborative vous permet de valider que la solution répond parfaitement à vos attentes avant de passer à la phase d'implémentation.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Implémentation et Accompagnement</h3>
+                        <p>Après validation de la solution, nous procédons à son implémentation dans votre environnement. Notre accompagnement ne s'arrête pas à la mise en place technique :</p>
+                        <ul>
+                            <li>Formation de vos équipes à l'utilisation des nouveaux outils</li>
+                            <li>Support technique pendant la phase de déploiement</li>
+                            <li>Suivi régulier pour s'assurer que la solution répond à vos attentes</li>
+                            <li>Ajustements et optimisations en fonction des retours d'utilisation</li>
+                        </ul>
+                        <p>Notre objectif est de vous accompagner tout au long du processus pour garantir une intégration réussie de l'IA dans votre entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Les Avantages de Notre Approche</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h3>Expertise Technique</h3>
+                    <p>Nos consultants possèdent une expertise approfondie des technologies IA et une connaissance pointue des meilleures pratiques d'implémentation.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Solutions Sur Mesure</h3>
+                    <p>Chaque solution est conçue spécifiquement pour répondre aux besoins uniques de votre entreprise, en tenant compte de votre infrastructure existante.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Confidentialité Garantie</h3>
+                    <p>Nous privilégions les solutions locales qui garantissent que vos données restent sous votre contrôle, sans dépendance aux services cloud externes.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Transfert de Compétences</h3>
+                    <p>Notre approche inclut la formation de vos équipes pour assurer l'autonomie et la pérennité de votre solution IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt à transformer votre entreprise avec l'IA ?</h2>
+            <p>Contactez-nous dès aujourd'hui pour discuter de vos besoins et découvrir comment notre expertise en IA peut vous aider à atteindre vos objectifs.</p>
+            <a href="contact.html" class="btn btn-primary">Prendre rendez-vous</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3>AI Solutions</h3>
+                <p>Solutions IA & Maintenance Informatique pour freelances et créateurs.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="outils-ia.html">Installation d'outils IA</a></li>
+                    <li><a href="agents-ia.html">Automatisation</a></li>
+                    <li><a href="generation-video.html">Génération Vidéo</a></li>
+                    <li><a href="index.html#services">Maintenance informatique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#profil">Profil</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AI Solutions. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expériences & Projets - AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .experiences-section {
+            padding: 4rem 0;
+        }
+        
+        .experiences-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .experience-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .experience-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #e0e0e0;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            left: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 16px;
+            z-index: 1;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+        
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: rgba(118, 185, 0, 0.1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .project-section {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        .project-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-tag {
+            padding: 0.3rem 0.8rem;
+            background-color: rgba(118, 185, 0, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+        .skills-section {
+            padding: 4rem 0;
+        }
+        
+        .skills-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .skills-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .skills-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .cta-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-icon {
+                left: 30px;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>AI Solutions</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html#accueil">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#competences">Compétences</a></li>
+                <li class="nav-item"><a href="experiences.html">Expériences</a></li>
+                <li class="nav-item"><a href="generation-video.html">Génération Vidéo</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Expériences & Projets</h1>
+            <p>Découvrez mon parcours professionnel et les projets sur lesquels j'ai travaillé dans le domaine de l'IA et de l'informatique</p>
+        </div>
+    </section>
+
+    <section class="experiences-section">
+        <div class="container experiences-container">
+            <div class="experience-intro">
+                <h2 class="section-title">Mon Parcours Professionnel</h2>
+                <p>Au fil des années, j'ai développé une expertise dans l'installation et la configuration de solutions IA, le développement de systèmes RAG, la maintenance informatique et l'accompagnement de clients. Voici les principales étapes de mon parcours :</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Présent</span>
+                        <h3>Installation et configuration de solutions IA</h3>
+                        <p>Déploiement de Docker et n8n pour la gestion d'agents et l'automatisation de tâches IA.</p>
+                        <p>Création et gestion de serveurs IA pour la recherche web et l'installation de ressources (MCPserver, Puppeteer).</p>
+                        <p>Mise en place d'un workflow local avec ComfyUI pour la génération d'images et l'expérimentation en vidéo IA.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - Présent</span>
+                        <h3>Développement de systèmes RAG</h3>
+                        <p>Intégration de Qdrant pour la gestion de bases de données vectorielles.</p>
+                        <p>Configuration de modèles d'embedding avec OLlama et Deepseek.</p>
+                        <p>Mise en place de systèmes de recherche augmentée par génération pour améliorer les capacités des modèles de langage.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - Présent</span>
+                        <h3>Maintenance et réparation informatique</h3>
+                        <p>Diagnostic, maintenance et réparation de matériels informatiques variés.</p>
+                        <p>Optimisation et mise à niveau des composants PC pour améliorer les performances.</p>
+                        <p>Installation de systèmes d'exploitation et de logiciels spécialisés selon les besoins des clients.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - Présent</span>
+                        <h3>Accompagnement et consulting</h3>
+                        <p>Aide aux freelances et créateurs pour l'adoption et l'optimisation des outils IA.</p>
+                        <p>Définition de solutions sur mesure selon les besoins spécifiques des utilisateurs.</p>
+                        <p>Formation et support technique pour l'utilisation des technologies IA.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <div class="container">
+            <h2 class="section-title">Projets Réalisés</h2>
+            <p class="section-description">Voici quelques projets significatifs sur lesquels j'ai travaillé, démontrant mon expertise dans différents domaines de l'IA et de l'informatique.</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/n8ndocker.png" alt="Projet d'automatisation IA" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Système d'automatisation pour créateurs de contenu</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">n8n</span>
+                            <span class="project-tag">Automatisation</span>
+                        </div>
+                        <p>Mise en place d'un système complet d'automatisation permettant à des créateurs de contenu de générer, planifier et publier du contenu sur différentes plateformes à partir d'une seule interface.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/workflow2.png" alt="Projet de base de données vectorielle" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Base de connaissances intelligente</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Qdrant</span>
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">Embeddings</span>
+                        </div>
+                        <p>Développement d'une base de connaissances utilisant des technologies vectorielles pour permettre à une entreprise de consulter rapidement sa documentation technique via des requêtes en langage naturel.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/hero-image.png" alt="Projet de génération d'images" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Pipeline de génération d'images pour e-commerce</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">ComfyUI</span>
+                            <span class="project-tag">IA Générative</span>
+                            <span class="project-tag">Automatisation</span>
+                        </div>
+                        <p>Création d'un workflow automatisé permettant à une boutique en ligne de générer des visuels de produits dans différents contextes et styles à partir d'une seule image source.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container skills-container">
+            <div class="skills-intro">
+                <h2 class="section-title">Compétences Techniques</h2>
+                <p>Mes compétences couvrent un large éventail de technologies et d'outils dans le domaine de l'IA et de l'informatique, me permettant de proposer des solutions complètes et adaptées à chaque besoin.</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Intelligence Artificielle</h3>
+                    <ul class="skill-list">
+                        <li>Déploiement de modèles de langage (LLM)</li>
+                        <li>Configuration de systèmes RAG</li>
+                        <li>Génération d'images et de vidéos par IA</li>
+                        <li>Automatisation de workflows IA</li>
+                        <li>Orchestration d'agents IA</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Outils et Technologies</h3>
+                    <ul class="skill-list">
+                        <li>Docker et conteneurisation</li>
+                        <li>n8n pour l'automatisation</li>
+                        <li>MCPserver pour la gestion d'agents</li>
+                        <li>Puppeteer pour l'automatisation web</li>
+                        <li>ComfyUI pour la génération d'images</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Maintenance Informatique</h3>
+                    <ul class="skill-list">
+                        <li>Diagnostic et réparation de matériel</li>
+                        <li>Optimisation de performances</li>
+                        <li>Installation de systèmes d'exploitation</li>
+                        <li>Configuration de réseaux</li>
+                        <li>Sécurisation de systèmes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt à collaborer sur votre prochain projet ?</h2>
+            <p>Que vous ayez besoin d'une solution IA sur mesure, d'une automatisation de vos processus ou d'une maintenance informatique, je suis là pour vous accompagner dans la réalisation de vos projets.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3>AI Solutions</h3>
+                <p>Solutions IA & Maintenance Informatique pour freelances et créateurs.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="outils-ia.html">Installation d'outils IA</a></li>
+                    <li><a href="agents-ia.html">Automatisation</a></li>
+                    <li><a href="generation-video.html">Génération Vidéo</a></li>
+                    <li><a href="index.html#services">Maintenance informatique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#profil">Profil</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AI Solutions. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

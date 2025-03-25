@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire Agences Événementielles - AI Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .questionnaire-section {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .questionnaire-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .options {
+            margin-left: 20px;
+        }
+        
+        .option {
+            margin: 8px 0;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        input[type="number"] {
+            width: 60px;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .section-description {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: 500;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        /* Style pour séparer les sections */
+        .questionnaire-section h2:not(:first-child) {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>AI Solutions</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html#accueil">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#profil">Profil</a></li>
+                <li class="nav-item"><a href="index.html#competences">Compétences</a></li>
+                <li class="nav-item"><a href="experiences.html">Expériences</a></li>
+                <li class="nav-item"><a href="generation-video.html">Génération Vidéo</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Questionnaire : Besoins en Solutions IA pour Agences Événementielles</h1>
+            <p>Aidez-nous à comprendre vos besoins pour vous proposer des solutions adaptées</p>
+        </div>
+    </section>
+
+    <section class="questionnaire-section">
+        <div class="questionnaire-container">
+            <form id="ai-needs-form" action="https://formsubmit.co/jpierreadresse@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Réponse au questionnaire Agences Événementielles">
+                <input type="hidden" name="_next" value="merci.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+            
+                <h2>Informations Générales</h2>
+                <div class="section-description">Présentez votre agence et votre activité événementielle</div>
+                
+                <div class="question">
+                    <label for="agency-name">Nom de votre agence :</label>
+                    <input type="text" id="agency-name" name="agency-name">
+                </div>
+                
+                <div class="question">
+                    <p>Nombre d'événements organisés par an :</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="events-less-10" name="events-number" value="Moins de 10">
+                            <label for="events-less-10">Moins de 10</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="events-10-50" name="events-number" value="10 - 50">
+                            <label for="events-10-50">10 - 50</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="events-50-100" name="events-number" value="50 - 100">
+                            <label for="events-50-100">50 - 100</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="events-more-100" name="events-number" value="Plus de 100">
+                            <label for="events-more-100">Plus de 100</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Type d'événements organisés (plusieurs réponses possibles) :</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="private-parties" name="event-types" value="Soirées privées">
+                            <label for="private-parties">Soirées privées</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="weddings" name="event-types" value="Mariages">
+                            <label for="weddings">Mariages</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="corporate" name="event-types" value="Événements d'entreprise">
+                            <label for="corporate">Événements d'entreprise</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="festivals" name="event-types" value="Festivals">
+                            <label for="festivals">Festivals</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="other-events" name="event-types" value="Autres">
+                            <label for="other-events">Autres (précisez) :</label>
+                            <input type="text" id="other-events-text" name="other-events-text">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Disposez-vous déjà d'outils digitaux pour l'organisation de vos événements ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="digital-tools-many" name="digital-tools" value="Oui, plusieurs">
+                            <label for="digital-tools-many">Oui, plusieurs</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="digital-tools-few" name="digital-tools" value="Oui, quelques-uns">
+                            <label for="digital-tools-few">Oui, quelques-uns</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="digital-tools-none" name="digital-tools" value="Non, tout est géré manuellement">
+                            <label for="digital-tools-none">Non, tout est géré manuellement</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Quels outils digitaux utilisez-vous actuellement ?</p>
+                    <textarea id="current-tools" name="current-tools" rows="3"></textarea>
+                </div>
+                
+                <h2>Gestion et Organisation</h2>
+                <div class="section-description">Évaluez vos défis organisationnels et vos besoins en automatisation</div>
+                
+                <div class="question">
+                    <p>Quels sont les plus grands défis dans l'organisation de vos événements ? (classez par ordre d'importance de 1 à 6, 1 étant le plus important)</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="number" min="1" max="6" id="challenge-guests" name="challenge-guests" style="width: 60px;">
+                            <label for="challenge-guests">Gestion des invités</label>
+                        </div>
+                        <div class="option">
+                            <input type="number" min="1" max="6" id="challenge-planning" name="challenge-planning" style="width: 60px;">
+                            <label for="challenge-planning">Planification et logistique</label>
+                        </div>
+                        <div class="option">
+                            <input type="number" min="1" max="6" id="challenge-communication" name="challenge-communication" style="width: 60px;">
+                            <label for="challenge-communication">Communication avec les prestataires</label>
+                        </div>
+                        <div class="option">
+                            <input type="number" min="1" max="6" id="challenge-budget" name="challenge-budget" style="width: 60px;">
+                            <label for="challenge-budget">Budgétisation et optimisation des coûts</label>
+                        </div>
+                        <div class="option">
+                            <input type="number" min="1" max="6" id="challenge-security" name="challenge-security" style="width: 60px;">
+                            <label for="challenge-security">Sécurité et gestion des risques</label>
+                        </div>
+                        <div class="option">
+                            <input type="number" min="1" max="6" id="challenge-other" name="challenge-other" style="width: 60px;">
+                            <label for="challenge-other">Autres :</label>
+                            <input type="text" id="challenge-other-text" name="challenge-other-text">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Êtes-vous intéressé par une IA pour automatiser la planification des événements ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="planning-ai-yes" name="planning-ai" value="Oui">
+                            <label for="planning-ai-yes">Oui</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="planning-ai-no" name="planning-ai" value="Non">
+                            <label for="planning-ai-no">Non</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="planning-ai-maybe" name="planning-ai" value="Peut-être, selon les fonctionnalités">
+                            <label for="planning-ai-maybe">Peut-être, selon les fonctionnalités</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Expérience Client et Engagement</h2>
+                <div class="section-description">Évaluez comment l'IA pourrait améliorer l'expérience de vos clients</div>
+                
+                <div class="question">
+                    <p>Utilisez-vous des outils pour personnaliser l'expérience des invités ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="personalization-advanced" name="personalization" value="Oui, des solutions avancées">
+                            <label for="personalization-advanced">Oui, des solutions avancées (ex : IA pour recommandations personnalisées)</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="personalization-basic" name="personalization" value="Oui, mais de manière basique">
+                            <label for="personalization-basic">Oui, mais de manière basique (ex : e-mails segmentés)</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="personalization-none" name="personalization" value="Non">
+                            <label for="personalization-none">Non</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Souhaiteriez-vous une IA pour :</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="ai-personalize" name="ai-use-case" value="Personnaliser l'expérience des invités">
+                            <label for="ai-personalize">Personnaliser l'expérience des invités</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="ai-automate" name="ai-use-case" value="Automatiser les interactions">
+                            <label for="ai-automate">Automatiser les interactions (chatbot, assistants vocaux)</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="ai-social" name="ai-use-case" value="Améliorer l'engagement sur les réseaux sociaux">
+                            <label for="ai-social">Améliorer l'engagement sur les réseaux sociaux</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="ai-other" name="ai-use-case" value="Autre">
+                            <label for="ai-other">Autre :</label>
+                            <input type="text" id="ai-other-text" name="ai-other-text">
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Marketing et Promotion</h2>
+                <div class="section-description">Évaluez comment l'IA pourrait optimiser vos stratégies marketing</div>
+                
+                <div class="question">
+                    <p>Utilisez-vous déjà l'IA pour le marketing (analyse des tendances, publicité ciblée, etc.) ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="marketing-ai-yes" name="marketing-ai" value="Oui">
+                            <label for="marketing-ai-yes">Oui</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="marketing-ai-no" name="marketing-ai" value="Non">
+                            <label for="marketing-ai-no">Non</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="marketing-ai-interested" name="marketing-ai" value="Pas encore, mais nous sommes intéressés">
+                            <label for="marketing-ai-interested">Pas encore, mais nous sommes intéressés</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Quels canaux marketing utilisez-vous principalement ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="marketing-social" name="marketing-channels" value="Réseaux sociaux">
+                            <label for="marketing-social">Réseaux sociaux</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="marketing-ads" name="marketing-channels" value="Publicité en ligne">
+                            <label for="marketing-ads">Publicité en ligne (Google Ads, Facebook Ads, etc.)</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="marketing-email" name="marketing-channels" value="E-mail marketing">
+                            <label for="marketing-email">E-mail marketing</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="marketing-other" name="marketing-channels" value="Autres">
+                            <label for="marketing-other">Autres :</label>
+                            <input type="text" id="marketing-other-text" name="marketing-other-text">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Aimeriez-vous une IA pour optimiser vos campagnes marketing ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="optimize-marketing-yes" name="optimize-marketing" value="Oui">
+                            <label for="optimize-marketing-yes">Oui</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="optimize-marketing-no" name="optimize-marketing" value="Non">
+                            <label for="optimize-marketing-no">Non</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="optimize-marketing-maybe" name="optimize-marketing" value="Peut-être">
+                            <label for="optimize-marketing-maybe">Peut-être</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Logistique et Gestion Opérationnelle</h2>
+                <div class="section-description">Identifiez les aspects logistiques où l'IA pourrait apporter de la valeur</div>
+                
+                <div class="question">
+                    <p>Votre agence gère-t-elle :</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="logistics-venues" name="logistics-management" value="La réservation des lieux">
+                            <label for="logistics-venues">La réservation des lieux</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="logistics-vendors" name="logistics-management" value="La gestion des fournisseurs et prestataires">
+                            <label for="logistics-vendors">La gestion des fournisseurs et prestataires</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="logistics-staff" name="logistics-management" value="La coordination du personnel">
+                            <label for="logistics-staff">La coordination du personnel</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="logistics-other" name="logistics-management" value="Autre">
+                            <label for="logistics-other">Autre :</label>
+                            <input type="text" id="logistics-other-text" name="logistics-other-text">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>L'IA pourrait-elle vous aider à :</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="ai-booking" name="ai-logistics" value="Automatiser la réservation des prestataires">
+                            <label for="ai-booking">Automatiser la réservation des prestataires</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="ai-resources" name="ai-logistics" value="Optimiser la gestion des ressources">
+                            <label for="ai-resources">Optimiser la gestion des ressources</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="ai-predict" name="ai-logistics" value="Prévoir les besoins logistiques">
+                            <label for="ai-predict">Prévoir les besoins logistiques</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="ai-logistics-other" name="ai-logistics" value="Autre">
+                            <label for="ai-logistics-other">Autre :</label>
+                            <input type="text" id="ai-logistics-other-text" name="ai-logistics-other-text">
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Sécurité et Gestion des Risques</h2>
+                <div class="section-description">Évaluez comment l'IA pourrait améliorer la sécurité de vos événements</div>
+                
+                <div class="question">
+                    <p>Prenez-vous en compte l'analyse des risques dans l'organisation de vos événements ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="risk-advanced" name="risk-analysis" value="Oui, de manière avancée">
+                            <label for="risk-advanced">Oui, de manière avancée</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="risk-basic" name="risk-analysis" value="Oui, mais de manière basique">
+                            <label for="risk-basic">Oui, mais de manière basique</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="risk-none" name="risk-analysis" value="Non">
+                            <label for="risk-none">Non</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>L'IA pourrait-elle vous aider à améliorer la sécurité de vos événements ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="security-crowd" name="security-ai" value="Analyse des foules et détection d'anomalies">
+                            <label for="security-crowd">Analyse des foules et détection d'anomalies</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="security-flow" name="security-ai" value="Gestion des flux d'entrée/sortie">
+                            <label for="security-flow">Gestion des flux d'entrée/sortie</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="security-prevention" name="security-ai" value="Prévention des incidents">
+                            <label for="security-prevention">Prévention des incidents (prédiction de risques)</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="security-none" name="security-ai" value="Non, nous n'en avons pas besoin">
+                            <label for="security-none">Non, nous n'en avons pas besoin</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Analyse et Reporting</h2>
+                <div class="section-description">Évaluez vos besoins en matière d'analyse de données et de rapports</div>
+                
+                <div class="question">
+                    <p>Disposez-vous d'un système d'analyse des performances post-événement ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="analytics-detailed" name="analytics" value="Oui, avec des données détaillées">
+                            <label for="analytics-detailed">Oui, avec des données détaillées</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="analytics-limited" name="analytics" value="Oui, mais de manière limitée">
+                            <label for="analytics-limited">Oui, mais de manière limitée</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="analytics-none" name="analytics" value="Non">
+                            <label for="analytics-none">Non</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Seriez-vous intéressé par une IA pour générer automatiquement des rapports et insights après chaque événement ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="auto-reporting-yes" name="auto-reporting" value="Oui">
+                            <label for="auto-reporting-yes">Oui</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="auto-reporting-no" name="auto-reporting" value="Non">
+                            <label for="auto-reporting-no">Non</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Quels types de données aimeriez-vous analyser après vos événements ? (précisez)</p>
+                    <textarea id="data-analysis" name="data-analysis" rows="3"></textarea>
+                </div>
+                
+                <h2>Budget et Investissement</h2>
+                <div class="section-description">Aidez-nous à comprendre votre budget pour les solutions IA</div>
+                
+                <div class="question">
+                    <p>Quel budget annuel seriez-vous prêt à consacrer à des solutions IA ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="budget-less-5k" name="ai-budget" value="Moins de 5 000€">
+                            <label for="budget-less-5k">Moins de 5 000€</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="budget-5k-15k" name="ai-budget" value="5 000€ - 15 000€">
+                            <label for="budget-5k-15k">5 000€ - 15 000€</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="budget-15k-30k" name="ai-budget" value="15 000€ - 30 000€">
+                            <label for="budget-15k-30k">15 000€ - 30 000€</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="budget-more-30k" name="ai-budget" value="Plus de 30 000€">
+                            <label for="budget-more-30k">Plus de 30 000€</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="budget-undecided" name="ai-budget" value="Pas encore décidé">
+                            <label for="budget-undecided">Pas encore décidé</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Conclusion</h2>
+                
+                <div class="question">
+                    <p>Quels sont les aspects où l'IA vous semble la plus utile ? (choisissez les plus pertinents)</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="useful-organization" name="ai-useful" value="Optimisation de l'organisation">
+                            <label for="useful-organization">Optimisation de l'organisation</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="useful-automation" name="ai-useful" value="Automatisation des tâches répétitives">
+                            <label for="useful-automation">Automatisation des tâches répétitives</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="useful-experience" name="ai-useful" value="Amélioration de l'expérience client">
+                            <label for="useful-experience">Amélioration de l'expérience client</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="useful-reporting" name="ai-useful" value="Analyse et reporting avancés">
+                            <label for="useful-reporting">Analyse et reporting avancés</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="useful-marketing" name="ai-useful" value="Marketing et engagement">
+                            <label for="useful-marketing">Marketing et engagement</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="useful-security" name="ai-useful" value="Sécurité et gestion des risques">
+                            <label for="useful-security">Sécurité et gestion des risques</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Souhaiteriez-vous une démonstration d'une solution IA adaptée à votre agence ?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="demo-yes" name="demo" value="Oui">
+                            <label for="demo-yes">Oui</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="demo-no" name="demo" value="Non">
+                            <label for="demo-no">Non</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="demo-maybe" name="demo" value="Peut-être, selon le prix et les fonctionnalités">
+                            <label for="demo-maybe">Peut-être, selon le prix et les fonctionnalités</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Informations de contact pour recevoir une proposition personnalisée :</p>
+                    <div class="options">
+                        <div class="option">
+                            <label for="contact-name">Nom et prénom :</label>
+                            <input type="text" id="contact-name" name="contact-name">
+                        </div>
+                        <div class="option">
+                            <label for="contact-email">Email :</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+                        <div class="option">
+                            <label for="contact-phone">Téléphone :</label>
+                            <input type="tel" id="contact-phone" name="contact-phone">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>Commentaires ou besoins spécifiques supplémentaires :</p>
+                    <textarea id="additional-comments" name="additional-comments" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Soumettre le questionnaire</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3>AI Solutions</h3>
+                <p>Solutions IA & Maintenance Informatique pour freelances et créateurs.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="outils-ia.html">Installation d'outils IA</a></li>
+                    <li><a href="agents-ia.html">Automatisation</a></li>
+                    <li><a href="generation-video.html">Génération Vidéo</a></li>
+                    <li><a href="consulting-accompagnement.html">Consulting</a></li>
+                    <li><a href="maintenance-infrastructure.html">Maintenance informatique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#profil">Profil</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AI Solutions. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

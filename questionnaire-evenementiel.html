@@ -198,23 +198,23 @@
                     <p>Type d'événements organisés (plusieurs réponses possibles) :</p>
                     <div class="options">
                         <div class="option">
-                            <input type="checkbox" id="private-parties" name="event-types" value="Soirées privées">
+                            <input type="checkbox" id="private-parties" name="event-types[]" value="Soirées privées">
                             <label for="private-parties">Soirées privées</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="weddings" name="event-types" value="Mariages">
+                            <input type="checkbox" id="weddings" name="event-types[]" value="Mariages">
                             <label for="weddings">Mariages</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="corporate" name="event-types" value="Événements d'entreprise">
+                            <input type="checkbox" id="corporate" name="event-types[]" value="Événements d'entreprise">
                             <label for="corporate">Événements d'entreprise</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="festivals" name="event-types" value="Festivals">
+                            <input type="checkbox" id="festivals" name="event-types[]" value="Festivals">
                             <label for="festivals">Festivals</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="other-events" name="event-types" value="Autres">
+                            <input type="checkbox" id="other-events" name="event-types[]" value="Autres">
                             <label for="other-events">Autres (précisez) :</label>
                             <input type="text" id="other-events-text" name="other-events-text">
                         </div>
@@ -321,19 +321,19 @@
                     <p>Souhaiteriez-vous une IA pour :</p>
                     <div class="options">
                         <div class="option">
-                            <input type="checkbox" id="ai-personalize" name="ai-use-case" value="Personnaliser l'expérience des invités">
+                            <input type="checkbox" id="ai-personalize" name="ai-use-case[]" value="Personnaliser l'expérience des invités">
                             <label for="ai-personalize">Personnaliser l'expérience des invités</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="ai-automate" name="ai-use-case" value="Automatiser les interactions">
+                            <input type="checkbox" id="ai-automate" name="ai-use-case[]" value="Automatiser les interactions">
                             <label for="ai-automate">Automatiser les interactions (chatbot, assistants vocaux)</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="ai-social" name="ai-use-case" value="Améliorer l'engagement sur les réseaux sociaux">
+                            <input type="checkbox" id="ai-social" name="ai-use-case[]" value="Améliorer l'engagement sur les réseaux sociaux">
                             <label for="ai-social">Améliorer l'engagement sur les réseaux sociaux</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="ai-other" name="ai-use-case" value="Autre">
+                            <input type="checkbox" id="ai-other" name="ai-use-case[]" value="Autre">
                             <label for="ai-other">Autre :</label>
                             <input type="text" id="ai-other-text" name="ai-other-text">
                         </div>
@@ -365,19 +365,19 @@
                     <p>Quels canaux marketing utilisez-vous principalement ?</p>
                     <div class="options">
                         <div class="option">
-                            <input type="checkbox" id="marketing-social" name="marketing-channels" value="Réseaux sociaux">
+                            <input type="checkbox" id="marketing-social" name="marketing-channels[]" value="Réseaux sociaux">
                             <label for="marketing-social">Réseaux sociaux</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="marketing-ads" name="marketing-channels" value="Publicité en ligne">
+                            <input type="checkbox" id="marketing-ads" name="marketing-channels[]" value="Publicité en ligne">
                             <label for="marketing-ads">Publicité en ligne (Google Ads, Facebook Ads, etc.)</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="marketing-email" name="marketing-channels" value="E-mail marketing">
+                            <input type="checkbox" id="marketing-email" name="marketing-channels[]" value="E-mail marketing">
                             <label for="marketing-email">E-mail marketing</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="marketing-other" name="marketing-channels" value="Autres">
+                            <input type="checkbox" id="marketing-other" name="marketing-channels[]" value="Autres">
                             <label for="marketing-other">Autres :</label>
                             <input type="text" id="marketing-other-text" name="marketing-other-text">
                         </div>
@@ -409,19 +409,19 @@
                     <p>Votre agence gère-t-elle :</p>
                     <div class="options">
                         <div class="option">
-                            <input type="checkbox" id="logistics-venues" name="logistics-management" value="La réservation des lieux">
+                            <input type="checkbox" id="logistics-venues" name="logistics-management[]" value="La réservation des lieux">
                             <label for="logistics-venues">La réservation des lieux</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="logistics-vendors" name="logistics-management" value="La gestion des fournisseurs et prestataires">
+                            <input type="checkbox" id="logistics-vendors" name="logistics-management[]" value="La gestion des fournisseurs et prestataires">
                             <label for="logistics-vendors">La gestion des fournisseurs et prestataires</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="logistics-staff" name="logistics-management" value="La coordination du personnel">
+                            <input type="checkbox" id="logistics-staff" name="logistics-management[]" value="La coordination du personnel">
                             <label for="logistics-staff">La coordination du personnel</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="logistics-other" name="logistics-management" value="Autre">
+                            <input type="checkbox" id="logistics-other" name="logistics-management[]" value="Autre">
                             <label for="logistics-other">Autre :</label>
                             <input type="text" id="logistics-other-text" name="logistics-other-text">
                         </div>
@@ -432,19 +432,19 @@
                     <p>L'IA pourrait-elle vous aider à :</p>
                     <div class="options">
                         <div class="option">
-                            <input type="checkbox" id="ai-booking" name="ai-logistics" value="Automatiser la réservation des prestataires">
+                            <input type="checkbox" id="ai-booking" name="ai-logistics[]" value="Automatiser la réservation des prestataires">
                             <label for="ai-booking">Automatiser la réservation des prestataires</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="ai-resources" name="ai-logistics" value="Optimiser la gestion des ressources">
+                            <input type="checkbox" id="ai-resources" name="ai-logistics[]" value="Optimiser la gestion des ressources">
                             <label for="ai-resources">Optimiser la gestion des ressources</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="ai-predict" name="ai-logistics" value="Prévoir les besoins logistiques">
+                            <input type="checkbox" id="ai-predict" name="ai-logistics[]" value="Prévoir les besoins logistiques">
                             <label for="ai-predict">Prévoir les besoins logistiques</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="ai-logistics-other" name="ai-logistics" value="Autre">
+                            <input type="checkbox" id="ai-logistics-other" name="ai-logistics[]" value="Autre">
                             <label for="ai-logistics-other">Autre :</label>
                             <input type="text" id="ai-logistics-other-text" name="ai-logistics-other-text">
                         </div>
@@ -476,19 +476,19 @@
                     <p>L'IA pourrait-elle vous aider à améliorer la sécurité de vos événements ?</p>
                     <div class="options">
                         <div class="option">
-                            <input type="checkbox" id="security-crowd" name="security-ai" value="Analyse des foules et détection d'anomalies">
+                            <input type="checkbox" id="security-crowd" name="security-ai[]" value="Analyse des foules et détection d'anomalies">
                             <label for="security-crowd">Analyse des foules et détection d'anomalies</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="security-flow" name="security-ai" value="Gestion des flux d'entrée/sortie">
+                            <input type="checkbox" id="security-flow" name="security-ai[]" value="Gestion des flux d'entrée/sortie">
                             <label for="security-flow">Gestion des flux d'entrée/sortie</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="security-prevention" name="security-ai" value="Prévention des incidents">
+                            <input type="checkbox" id="security-prevention" name="security-ai[]" value="Prévention des incidents">
                             <label for="security-prevention">Prévention des incidents (prédiction de risques)</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="security-none" name="security-ai" value="Non, nous n'en avons pas besoin">
+                            <input type="checkbox" id="security-none" name="security-ai[]" value="Non, nous n'en avons pas besoin">
                             <label for="security-none">Non, nous n'en avons pas besoin</label>
                         </div>
                     </div>
@@ -569,27 +569,27 @@
                     <p>Quels sont les aspects où l'IA vous semble la plus utile ? (choisissez les plus pertinents)</p>
                     <div class="options">
                         <div class="option">
-                            <input type="checkbox" id="useful-organization" name="ai-useful" value="Optimisation de l'organisation">
+                            <input type="checkbox" id="useful-organization" name="ai-useful[]" value="Optimisation de l'organisation">
                             <label for="useful-organization">Optimisation de l'organisation</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="useful-automation" name="ai-useful" value="Automatisation des tâches répétitives">
+                            <input type="checkbox" id="useful-automation" name="ai-useful[]" value="Automatisation des tâches répétitives">
                             <label for="useful-automation">Automatisation des tâches répétitives</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="useful-experience" name="ai-useful" value="Amélioration de l'expérience client">
+                            <input type="checkbox" id="useful-experience" name="ai-useful[]" value="Amélioration de l'expérience client">
                             <label for="useful-experience">Amélioration de l'expérience client</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="useful-reporting" name="ai-useful" value="Analyse et reporting avancés">
+                            <input type="checkbox" id="useful-reporting" name="ai-useful[]" value="Analyse et reporting avancés">
                             <label for="useful-reporting">Analyse et reporting avancés</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="useful-marketing" name="ai-useful" value="Marketing et engagement">
+                            <input type="checkbox" id="useful-marketing" name="ai-useful[]" value="Marketing et engagement">
                             <label for="useful-marketing">Marketing et engagement</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="useful-security" name="ai-useful" value="Sécurité et gestion des risques">
+                            <input type="checkbox" id="useful-security" name="ai-useful[]" value="Sécurité et gestion des risques">
                             <label for="useful-security">Sécurité et gestion des risques</label>
                         </div>
                     </div>
